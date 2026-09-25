@@ -1,0 +1,7 @@
+_target_: federated_methods.feddyn.feddyn.FedDyn
+num_clients_subset: 20
+alpha: 0.01
+debug_dual_state: False
+dual_state_decay_start_round: 200
+dual_state_min_scale: 0.1
+server_correction_max_ratio: 0.85

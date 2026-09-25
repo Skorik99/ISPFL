@@ -1,0 +1,4 @@
+_target_: federated_methods.delta.delta.Delta
+num_clients_subset: 20
+alpha_1: 0.8
+alpha_2: 0.2

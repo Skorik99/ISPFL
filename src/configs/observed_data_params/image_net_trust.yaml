@@ -1,0 +1,6 @@
+alpha: 1
+data_name: image_net_trust
+data_sources:
+  train_directories:
+  - null
+verbose: true

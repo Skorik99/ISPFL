@@ -1,0 +1,2 @@
+_target_: federated_methods.fednova.fednova.FedNova
+num_clients_subset: 20

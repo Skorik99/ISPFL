@@ -1,0 +1,9 @@
+alpha: 1
+data_name: shakespeare
+data_sources:
+  test_directories: null
+  train_directories: null
+pad_token_id: 126
+amount_of_clients: 1129
+verbose: true
+vocab_size: 127

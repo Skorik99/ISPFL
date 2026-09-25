@@ -1,0 +1,3 @@
+_target_: federated_methods.fedcbs.fedcbs.FedCBS
+num_clients_subset: 20
+lambda_: 10 # λ is the exploration factor to balance the trade-off between exploitation and exploration

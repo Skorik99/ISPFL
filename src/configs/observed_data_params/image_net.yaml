@@ -1,0 +1,8 @@
+alpha: 1
+data_name: image_net_dirichlet
+data_sources:
+  test_directories:
+  - null
+  train_directories:
+  - null
+verbose: true

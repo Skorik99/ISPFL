@@ -1,0 +1,14 @@
+defaults:
+  - isp_gp
+  - _self_
+
+_target_: federated_methods.isp_gp.ISPGPFedCBS
+lambda_: 10
+audit_interval: 20
+
+online_posterior:
+  enabled: false
+
+posterior_path:
+  q_max: 5
+  n_max: 7

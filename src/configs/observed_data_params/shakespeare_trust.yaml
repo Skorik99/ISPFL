@@ -1,0 +1,9 @@
+alpha: 1
+data_name: shakespeare_trust
+data_sources:
+  train_directories: null
+max_sequence_length: 80
+pad_token_id: 126
+amount_of_clients: 1129
+verbose: true
+vocab_size: 127

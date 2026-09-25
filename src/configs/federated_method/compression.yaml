@@ -1,0 +1,4 @@
+_target_: federated_methods.compression.compression.Compression
+num_clients_subset: 20
+compression_type: randk # randk, topk
+compression_k_percent: 3

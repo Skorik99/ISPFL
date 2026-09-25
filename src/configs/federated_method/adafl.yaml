@@ -1,0 +1,12 @@
+_target_: federated_methods.adafl.adafl.AdaFL
+
+base_method: fedavg # fedavg, fedcbs, delta, pow, fedcor
+
+wp_amount_cl: 5 # m_0
+max_amount_cl: 20 # m_max
+step_increase: 40 # delta_T
+
+warmup_rounds: 12 # T_0
+local_epoch_on_wp: 3 # amount of local epoch on clients while warmup
+
+args: null

@@ -1,0 +1,7 @@
+_target_: utils.text_model_utils.ShakespeareModel
+vocab_size: ${dataset.vocab_size}
+embedding_dim: 8
+hidden_size: 256
+num_layers: 2
+dropout: 0.5
+pad_token_id: ${dataset.pad_token_id}

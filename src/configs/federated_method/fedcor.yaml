@@ -1,0 +1,3 @@
+_target_: federated_methods.fedcor.fedcor.FedCor
+num_clients_subset: 20
+warmup: 12

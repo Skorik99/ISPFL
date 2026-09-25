@@ -1,0 +1,52 @@
+_target_: federated_methods.isp_gp.ISPGP
+
+num_clients_subset: 20
+audit_interval: 100
+local_epochs_on_support: 1
+auxiliary_multiplier: 2.0
+sample_step: 1
+num_clients_momentum: 0.5
+
+support:
+  burn_in_rounds: 4
+  events: 12
+  pool_size: 40
+  grid: [10, 12, 15, 18, 20, 22, 25, 30]
+  queries_per_event: 7
+
+posterior_path:
+  q_max: 6
+  n_min: 3
+  n_step: 2
+  n_max: 11
+  action_ratio_limit: 1.5
+
+online_posterior:
+  enabled: true
+  apply_action: true
+  momentum: 0.1
+  action_ratio_limit: 1.5
+  candidate_variance_neighbors: 10
+  ema_span: 5
+  use_as_audit_prior: true
+
+proxy_cohort:
+  bias_parameter: linear.bias
+  temperature: 0.0015
+  coverage: 400
+
+evaluator:
+  tensor_cache: gpu
+  minimum_noise: 1.0e-8
+
+gp:
+  min_observations: 84
+  min_distinct_rounds: 12
+  training_steps: 100
+  restarts: 3
+  learning_rate: 0.05
+  jitter: 1.0e-6
+  decision_beta: 0.0
+
+logging:
+  output_subdir: isp_gp

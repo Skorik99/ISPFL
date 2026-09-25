@@ -1,0 +1,2 @@
+_target_: federated_methods.text_base.text_fedavg.TextFedAvg
+num_clients_subset: 20

@@ -1,0 +1,3 @@
+defaults:
+  - isp_gp
+  - _self_

@@ -1,0 +1,64 @@
+defaults:
+    - models@models_dict.model1: resnet18
+    - observed_data_params@dataset: cifar10_dirichlet
+    - observed_data_params@server_test: cifar10_dirichlet
+    - observed_data_params@trust_df: cifar10_trust
+    - federated_method: fedavg
+    - losses@loss: ce
+    - manager: sequential
+    - optimizer: adam
+    - _self_
+models: ${oc.dict.values:models_dict}
+
+random_state: 42
+single_run_dir: ${hydra:run.dir}
+
+training_params:
+    batch_size: 256
+    num_workers: 0
+    server_test_cache: "gpu" # gpu, cpu, disabled
+    server_test_gpu_metrics: true
+    device: "cuda"
+    device_ids: [0]
+
+federated_params:
+    amount_of_clients: 10
+    communication_rounds: 150
+    round_epochs: 1
+    client_train_val_prop: 0.2
+    print_client_metrics: True
+    server_saving_metrics: ["loss"] # "loss", "Specificity", "Sensitivity", "G-mean", "f1-score", "fbeta2-score", "ROC-AUC", "AP", "Precision (PPV)", "NPV"
+    server_saving_agg: "uniform" # weighted
+
+    # Attack unitility (don`t use this)
+    clients_attack_types: "no_attack" # label_flip, sign_flip, random_grad; Can be mixed with a list ['label_flip', 'sign_flip']
+    prop_attack_clients: 0.0 # Must be in accordance with `clients_attack_types`.
+    attack_scheme: "no_attack" # constant, random_rounds, random_clients, random_rounds_random_clients
+    prop_attack_rounds: 0.0
+
+sampling_statistics: # about sampling statistic in ISP method
+    enabled: False
+    output_subdir: "selection_statistics"
+    R_pi: 200
+    R_b: 20
+    T_in: 200
+    m_grid_values: null
+    m_grid_start: 1
+    m_grid_stop: null
+    m_grid_step: 5
+    m_grid_include_stop: False
+    b_grid_values: null
+    b_grid_use_m_grid: True
+    b_grid_start: 1
+    b_grid_stop: null
+    b_grid_step: 5
+    b_grid_include_stop: False
+    backend: "thread" # thread, process, sequential
+    num_workers: 8
+    chunk_size: 32
+    log_pi_samples: True
+    log_i_samples: True
+    log_psi_samples: True
+    fedcor_tau: 0.0
+    pow_topk_tau: 0.0
+    seed_offset: 100000

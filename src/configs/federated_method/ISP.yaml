@@ -1,0 +1,21 @@
+_target_: federated_methods.ISP.ISP.ISP
+
+base_method: fedavg # fedavg, feddyn, fedprox, fednova, fedcbs, delta, pow, fedcor
+
+step_find_optimal: 20 # every step_find_optimal we will calculate optimal amount clients
+num_samples: 10 # num of sampling clients when calculate optimal amount clients
+sample_step: 1 # grid step when calculate optimal amount clients
+num_clients_momentum: 0.5 # momentum to update optimal number of clients
+
+warmup_rounds: 12 # amount of full communication rounds
+window_sz_loss: 5 # size of window for average trust loss by history
+local_epoch_on_wp: 3 # amount of local epoch on clients while warmup
+
+full_comm_client_amount: null # for ablation [1, amount_of_clients], can be null for using multiplayer form
+full_comm_amount_cl_multiplayer: 2 # clients on full communication = full_comm_amount_cl_multiplayer * m_t; must be >= 1
+use_stale_updates: True # sample candidate updates from all clients; False uses only the latest full-round clients
+debug_dual_state: False
+trust_available: False
+corrupted_trust: False
+ema_use: True
+args: null
