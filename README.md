@@ -1,4 +1,4 @@
-# Dynamic Client Count Selection for Scalable Federated Learning
+# Progress-Guided Client Participation in Federated Learning
 
 This repository contains the code used for the ISP paper and related experiments.
 
@@ -148,9 +148,3 @@ For ISP on top of this setup, switch to:
 - `federated_method.base_method=fedcor`
 - `+federated_method.args.num_clients_subset=20`
 - `federated_method.num_samples=1`
-
-## Additional Docs
-
-- [docs/C4.md](docs/C4.md)
-- [docs/method.md](docs/method.md)
-- [docs/config.md](docs/config.md)
